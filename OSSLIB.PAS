@@ -42,6 +42,7 @@ Function Clock:Long_Integer;
 Var
  Regs:Registers;
 Begin
+ Regs.AX:=0;
  Intr($1A,Regs);
  Clock:=Trunc((((Regs.CX shl 16)+Regs.DX)/18.2));
 End;
